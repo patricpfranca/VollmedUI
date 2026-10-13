@@ -142,6 +142,44 @@ struct CaptionStyle: ViewModifier {
     }
 }
 
+extension View {
+    public func titleLRegularStyle() -> some View {
+        modifier(TitleStyleLRegular())
+    }
+    
+    public func titleLBoldStyle() -> some View {
+        modifier(TitleStyleLBold())
+    }
+    
+    public func titleMdRegularStyle() -> some View {
+        modifier(TitleStyleMdRegular())
+    }
+    
+    public func titleMdBoldStyle() -> some View {
+        modifier(TitleStyleMdBold())
+    }
+    
+    public func titleSRegularStyle() -> some View {
+        modifier(TitleStyleSRegular())
+    }
+    
+    public func titleSBoldStyle() -> some View {
+        modifier(TitleStyleSBold())
+    }
+    
+    public func bodyRegularStyle() -> some View {
+        modifier(BodyStyleRegular())
+    }
+    
+    public func bodyBoldStyle() -> some View {
+        modifier(BodyStyleBold())
+    }
+    
+    public func captionStyle() -> some View {
+        modifier(CaptionStyle())
+    }
+}
+
 #Preview {
     VollmedTextStylesUI()
 }
