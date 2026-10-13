@@ -61,6 +61,87 @@ struct VollmedTextStylesUI: View {
     }
 }
 
+struct TitleStyleLRegular: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 22))
+            .foregroundStyle(.gray)
+            .fontWeight(.regular)
+    }
+}
+
+struct TitleStyleLBold: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 22))
+            .foregroundStyle(Color(red: 0.0/255.0, green: 33.0/255.0, blue: 61.0/255.0, opacity: 1.0))
+            .fontWeight(.bold)
+    }
+}
+
+struct TitleStyleMdRegular: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 20))
+            .foregroundStyle(.gray)
+            .fontWeight(.regular)
+    }
+}
+
+struct TitleStyleMdBold: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 20))
+            .foregroundStyle(Color(red: 0.0/255.0, green: 33.0/255.0, blue: 61.0/255.0, opacity: 1.0))
+            .fontWeight(.bold)
+    }
+}
+
+struct TitleStyleSRegular: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 18))
+            .foregroundStyle(.gray)
+            .fontWeight(.regular)
+    }
+}
+
+struct TitleStyleSBold: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 18))
+            .foregroundStyle(Color(red: 0.0/255.0, green: 33.0/255.0, blue: 61.0/255.0, opacity: 1.0))
+            .fontWeight(.bold)
+    }
+}
+
+struct BodyStyleRegular: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 17))
+            .foregroundStyle(.gray)
+            .fontWeight(.regular)
+    }
+}
+
+struct BodyStyleBold: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 17))
+            .foregroundStyle(.gray)
+            .fontWeight(.bold)
+    }
+}
+
+struct CaptionStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 14))
+            .foregroundStyle(.gray)
+            .fontWeight(.regular)
+    }
+}
+
 #Preview {
     VollmedTextStylesUI()
 }
