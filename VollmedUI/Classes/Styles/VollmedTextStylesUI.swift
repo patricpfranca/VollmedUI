@@ -9,55 +9,87 @@ import SwiftUI
 
 struct VollmedTextStylesUI: View {
     
-    let boldColor = Color(red: 0.0/255.0, green: 33.0/255.0, blue: 61.0/255.0, opacity: 1.0)
-    
     var body: some View {
         VStack {
             Text("Tile L Regular")
-                .font(.system(size: 22))
-                .foregroundStyle(.gray)
-                .fontWeight(.regular)
+                .vollmedTextStyle(.titleLRegular)
             
             Text("Tile L Bold")
-                .font(.system(size: 22))
-                .foregroundStyle(boldColor)
-                .fontWeight(.bold)
+                .vollmedTextStyle(.titleLBold)
             
             Text("Tile Md Regular")
-                .font(.system(size: 20))
-                .foregroundStyle(.gray)
-                .fontWeight(.regular)
+                .vollmedTextStyle(.titleMdRegular)
             
             Text("Tile Md Bold")
-                .font(.system(size: 20))
-                .foregroundStyle(boldColor)
-                .fontWeight(.bold)
+                .vollmedTextStyle(.titleMdBold)
             
             Text("Tile S Regular")
-                .font(.system(size: 18))
-                .foregroundStyle(.gray)
-                .fontWeight(.regular)
+                .vollmedTextStyle(.titleSRegular)
             
             Text("Tile S Bold")
-                .font(.system(size: 18))
-                .foregroundStyle(boldColor)
-                .fontWeight(.bold)
+                .vollmedTextStyle(.titleSBold)
             
             Text("Body Regular")
-                .font(.system(size: 17))
-                .foregroundStyle(.gray)
-                .fontWeight(.regular)
+                .vollmedTextStyle(.bodyRegular)
             
             Text("Body Bold")
-                .font(.system(size: 17))
-                .foregroundStyle(.gray)
-                .fontWeight(.bold)
+                .vollmedTextStyle(.bodyBold)
             
             Text("Caption")
-                .font(.system(size: 14))
-                .foregroundStyle(.gray)
-                .fontWeight(.regular)
+                .vollmedTextStyle(.caption)
         }
+    }
+}
+
+public enum VollmedTextStyle {
+    case titleLRegular, titleLBold
+    case titleMdRegular, titleMdBold
+    case titleSRegular, titleSBold
+    case bodyRegular, bodyBold
+    case caption
+    
+    var size: CGFloat {
+        switch self {
+        case .titleLRegular, .titleLBold: return 22
+        case .titleMdRegular, .titleMdBold: return 20
+        case .titleSRegular, .titleSBold: return 18
+        case .bodyRegular, .bodyBold: return 17
+        case .caption: return 14
+        }
+    }
+    
+    var weight: Font.Weight {
+        switch self {
+        case .titleLBold, .titleMdBold, .titleSBold, .bodyBold: return .bold
+        default: return .regular
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .titleLBold, .titleMdBold, .titleSBold: return .vollmedPrimary
+        default: return .gray
+        }
+    }
+}
+
+extension Color {
+    static let vollmedPrimary = Color(red: 0.0/255.0, green: 33.0/255.0, blue: 61.0/255.0)
+}
+
+struct VollmedTextStyleModifier: ViewModifier {
+    let style: VollmedTextStyle
+    
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: style.size, weight: style.weight))
+            .foregroundStyle(style.color)
+    }
+}
+
+extension View {
+    public func vollmedTextStyle(_ style: VollmedTextStyle) -> some View {
+        modifier(VollmedTextStyleModifier(style: style))
     }
 }
 
