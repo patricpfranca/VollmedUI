@@ -1,6 +1,6 @@
 # VollmedUI
 
-[![CI Status](https://img.shields.io/travis/Patric Pereira/VollmedUI.svg?style=flat)](https://travis-ci.org/Patric Pereira/VollmedUI)
+[![CI Status](https://img.shields.io/travis/Patric Pereira/VollmedUI.svg?style=flat)](https://travis-ci.org/patricpfranca/VollmedUI)
 [![Version](https://img.shields.io/cocoapods/v/VollmedUI.svg?style=flat)](https://cocoapods.org/pods/VollmedUI)
 [![License](https://img.shields.io/cocoapods/l/VollmedUI.svg?style=flat)](https://cocoapods.org/pods/VollmedUI)
 [![Platform](https://img.shields.io/cocoapods/p/VollmedUI.svg?style=flat)](https://cocoapods.org/pods/VollmedUI)
@@ -22,7 +22,7 @@ pod 'VollmedUI'
 
 ## Author
 
-Patric Pereira, patric.franca@petanjo.com
+Patric Pereira, patric.pereirafranca@gmail.com
 
 ## License
 
